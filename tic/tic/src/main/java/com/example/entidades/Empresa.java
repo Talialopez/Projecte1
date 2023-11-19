@@ -1,9 +1,13 @@
 package com.example.entidades;
 
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -13,17 +17,17 @@ public class Empresa {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nom;
-    private String descripcio;
     private String ubicacio;
     
+    @OneToMany(mappedBy = "empresa", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Oferta> ofertas;
     
-    Empresa() {}
-    
-    Empresa(String nom, String descripcio, String ubicacio){
+    Empresa(String nom, String ubicacio){
     	this.nom = nom;
-    	this.descripcio = descripcio;
     	this.ubicacio = ubicacio;
     }
+    
+    Empresa() {}
     
     public Long getId() {
     	return this.id;
@@ -41,14 +45,6 @@ public class Empresa {
 		this.nom = nom;
 	}
 	
-	public String getDescripcio() {
-		return descripcio;
-	}
-	
-	public void setDescripcio(String descripcio) {
-		this.descripcio = descripcio;
-	}
-
 	public String getUbicacio() {
 		return ubicacio;
 	}
