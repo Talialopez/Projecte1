@@ -10,6 +10,5 @@ import com.example.entidades.Empresa;
 @Repository
 public interface EmpresaRepository extends JpaRepository<Empresa, Long> {
 
-	@Query("SELECT e FROM Empresa e WHERE e.nom = :nom")
-	Empresa findByNom(@Param("nom") String nom);
+
 }
