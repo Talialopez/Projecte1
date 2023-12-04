@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TicApplication {
+public class ProyectoTicApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TicApplication.class, args);
+		SpringApplication.run(ProyectoTicApplication.class, args);
 	}
 
 }

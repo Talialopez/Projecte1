@@ -12,67 +12,67 @@ import java.util.Optional;
 
 @Component
 public class ServiceRest {
-	
-	@Autowired
-	private EmpresaRepository empresaRepository;
-	
+
+    @Autowired
+    private EmpresaRepository empresaRepository;
+
     @Autowired
     private OfertaRepository ofertaRepository;
-	
-	
-	public Empresa createEmpresa(Empresa empresa) {
-		return empresaRepository.save(empresa);
-	}
-	
-	public Empresa getEmpresaById(Long id) {
-		Optional<Empresa> optionalEmpresa = empresaRepository.findById(id);
-		return optionalEmpresa.get();
-	}
-	
-	
-	/**public Empresa getEmpresaByNom(String nom) throws Exception {
-		Empresa empresa = empresaRepository.findByNom(nom);
 
-        if (empresa == null) {
-            throw new Exception("No se encontró ninguna empresa con el nombre: " + nom);
+
+    public Empresa createEmpresa(Empresa empresa) {
+        return empresaRepository.save(empresa);
+    }
+
+    public Empresa getEmpresaById(Long id) {
+        Optional<Empresa> optionalEmpresa = empresaRepository.findById(id);
+        return optionalEmpresa.get();
+    }
+
+
+    /**public Empresa getEmpresaByNom(String nom) throws Exception {
+     Empresa empresa = empresaRepository.findByNom(nom);
+
+     if (empresa == null) {
+     throw new Exception("No se encontró ninguna empresa con el nombre: " + nom);
+     }
+     return empresa;
+     }*/
+
+    public List<Empresa> getAllEmpresas(){
+        return empresaRepository.findAll();
+    }
+
+    public void deleteEmpresa(Long id) {
+        empresaRepository.deleteById(id);
+    }
+
+    public Empresa updateEmpresa(Long id, Empresa empresaActualizada) {
+        Optional<Empresa> empresaEncontrada = empresaRepository.findById(id);
+
+        if (empresaEncontrada.isPresent()) {
+            Empresa empresa = empresaEncontrada.get();
+            empresa.setNom(empresaActualizada.getNom());
+            empresa.setUbicacio(empresaActualizada.getUbicacio());
+
+            return empresaRepository.save(empresa);
         }
-        return empresa;
-    }*/
-	
-	public List<Empresa> getAllEmpresas(){
-		return empresaRepository.findAll();
-	}
-	
-	public void deleteEmpresa(Long id) {
-		empresaRepository.deleteById(id);
-	}
 
-	public Empresa updateEmpresa(Long id, Empresa empresaActualizada) {
-	    Optional<Empresa> empresaEncontrada = empresaRepository.findById(id);
-
-	    if (empresaEncontrada.isPresent()) {
-	        Empresa empresa = empresaEncontrada.get();
-	        empresa.setNom(empresaActualizada.getNom());
-	        empresa.setUbicacio(empresaActualizada.getUbicacio());
-
-	        return empresaRepository.save(empresa);
-	    }
-
-	    return null;
-	}
+        return null;
+    }
 
 
-	public Oferta createOferta(Long empresaId, Oferta oferta) {
-	    Optional<Empresa> optionalEmpresa = empresaRepository.findById(empresaId);
+    public Oferta createOferta(Long empresaId, Oferta oferta) {
+        Optional<Empresa> optionalEmpresa = empresaRepository.findById(empresaId);
 
-	    if (optionalEmpresa.isPresent()) {
-	        Empresa empresa = optionalEmpresa.get();
-	        oferta.setEmpresa(empresa); //
-	        return ofertaRepository.save(oferta); 
-	    }
+        if (optionalEmpresa.isPresent()) {
+            Empresa empresa = optionalEmpresa.get();
+            oferta.setEmpresa(empresa); //
+            return ofertaRepository.save(oferta);
+        }
 
-	    return null;
-	}
+        return null;
+    }
 
 
     public List<Oferta> getAllOfertas() {
