@@ -10,22 +10,25 @@ public class Oferta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nom;
-    private String requisitos;
-    private String conocimientosNecesarios;
-    private String estudiosNecesarios;
+    private String idiomas;
+    private String conocimientos;
+    private String estudios;
     private String descripcion;
+    private String requisitos;
 
 
     @ManyToOne
     @JoinColumn(name = "empresa_id")
     private Empresa empresa;
 
-    public Oferta(String nom, String requisitos, String conocimientosNecesarios, String estudiosNecesarios, String descripcion, Empresa empresa){
+    public Oferta(String nom, String idiomas, String conocimientos,
+                  String estudios, String descripcion, String requisitios, Empresa empresa){
         this.nom = nom;
-        this.requisitos = requisitos;
-        this.conocimientosNecesarios =conocimientosNecesarios;
-        this.estudiosNecesarios = estudiosNecesarios;
+        this.idiomas = idiomas;
+        this.conocimientos = conocimientos;
+        this.estudios = estudios;
         this.descripcion = descripcion;
+        this.requisitos = requisitios;
         this.empresa = empresa;
     }
 
@@ -47,28 +50,28 @@ public class Oferta {
         this.nom = nom;
     }
 
-    public String getRequisitos() {
-        return requisitos;
+    public String getIdiomas() {
+        return idiomas;
     }
 
-    public void setRequisitos(String requisitos) {
-        this.requisitos = requisitos;
+    public void setIdiomas(String requisitos) {
+        this.idiomas = requisitos;
     }
 
-    public String getConocimientosNecesarios() {
-        return conocimientosNecesarios;
+    public String getConocimientos() {
+        return conocimientos;
     }
 
-    public void setConocimientosNecesarios(String conocimientosNecesarios) {
-        this.conocimientosNecesarios = conocimientosNecesarios;
+    public void setConocimientos(String conocimientosNecesarios) {
+        this.conocimientos = conocimientosNecesarios;
     }
 
-    public String getEstudiosNecesarios() {
-        return estudiosNecesarios;
+    public String getEstudios() {
+        return estudios;
     }
 
-    public void setEstudiosNecesarios(String estudiosNecesarios) {
-        this.estudiosNecesarios = estudiosNecesarios;
+    public void setEstudios(String estudiosNecesarios) {
+        this.estudios = estudiosNecesarios;
     }
 
     public String getDescripcion() {
@@ -78,6 +81,9 @@ public class Oferta {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+
+    public String getRequisitos(){ return requisitos; }
+    public void setRequisitos(String requisitos){ this.requisitos = requisitos; }
 
     public Empresa getEmpresa() {
         return empresa;
