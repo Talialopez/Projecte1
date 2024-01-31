@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="b92cdd32-b0af-455d-a076-eb1ec8f3303a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/tic/tic/src/main/java/com/example/service/EmpresaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tic/tic/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tic/tic/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tic/tic/src/main/java/com/example/controllers/EmpresaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/tic/tic/src/main/java/com/example/controllers/EmpresaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tic/tic/src/main/java/com/example/entidades/Empresa.java" beforeDir="false" afterPath="$PROJECT_DIR$/tic/tic/src/main/java/com/example/entidades/Empresa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tic/tic/src/test/java/com/example/tic/TicApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/tic/tic/src/test/java/com/example/tic/TicApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,9 +18,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2Z57TDn37F7CATtzRXbAyIB1J3g" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -31,9 +30,11 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
     "WebServerToolWindowFactoryState": "false",
+    "cidr.known.project.marker": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Reimon/ProjecteAPP/tic/tic",
+    "last_opened_file_path": "C:/Users/talia/WEEK",
     "run.code.analysis.last.selected.profile": "pProject Default",
     "vue.rearranger.settings.migration": "true"
   }
